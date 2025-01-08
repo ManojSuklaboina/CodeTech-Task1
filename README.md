@@ -8,6 +8,8 @@ duration:Nov/30/2024 to jan/15/2025
 OVER VIEW OF THE PROJECT:
 project:predictive modeling with linear regression
 
+![image alt](https://github.com/ManojSuklaboina/CodeTech-Task1/blob/73d23905e4408b75cc2b3aa8123ddb489eb097c5/Screenshot%20(112).png)
+
 
 
 
