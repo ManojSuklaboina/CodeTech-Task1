@@ -8,16 +8,14 @@ import matplotlib.pyplot as plt
 
 ds=pd.read_csv('Real estate.csv')
 print(ds.shape)
-x=ds.iloc[:,0:7]
+x=ds.iloc[:,2]
 x=np.array(x)
 
 y=ds.iloc[:,7]
 y=np.array(y)
+y=y.reshape(-1,1)
+x=x.reshape(-1,1)
 x_train,x_test,y_train,y_test=model_selection.train_test_split(x,y)
-
-
-
-
 alg=LinearRegression()
 alg.fit(x_train,y_train)
 print(x_train.shape)
@@ -37,3 +35,10 @@ print('model score on testing data:',alg.score(x_train,y_train))
 mean_suared_error=((y_test-ypredicted)**2).sum()
 mean_suared_error=mean_suared_error/(y_test.size)
 print('mean squared error:',mean_suared_error)
+
+#plot using matplotlib
+plt.scatter(x_test,y_test,color='red',label='y_test')
+plt.plot(x_test,ypredicted,label='y_predicted')
+plt.xlabel('x_test')
+plt.ylabel('y test and y predicted')
+plt.legend()
